@@ -104,6 +104,14 @@ ul.sub_menu>li:hover ul.child_menu>li{
     color: #0f0d95;
     transition: all 0.2s;
 }
+
+/* ------------form search */
+.search{
+    padding-top: 22px;
+}
+.search>input{
+    line-height: 25px;
+}
 /* --------------------------notify---------------- */
 .main_menu ul>li{
     position: relative;

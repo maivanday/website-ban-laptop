@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../BT_LON_WEB/assets/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-5.12.1-web/css/all.min.css">
     
-    <link rel="stylesheet" href="../BT_LON_WEB/assets/css/index.css">
-    <link rel="stylesheet" href="../BT_LON_WEB/assets/css/reset.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/register.css">
+    <title>form đăng ký</title>
 </head>
 <body>
     <div class="wrapper">
@@ -16,7 +17,7 @@
             <div class="wrapper_content">
                <div class="nav_menu">
                    <div class="col-4">
-                       <img src="../BT_LON_WEB/assets/img/log1.jpg" alt="">
+                       <img src="../assets/img/log1.jpg" alt="">
 
                    </div>
                    <div class="col-8">
@@ -122,7 +123,7 @@
                                     </form>
                                 </li>
                                <li >
-                                   <a href="./view/register.html">
+                                   <a href="../index.html">
                                         <i class="fas fa-user-alt"></i>
                                      </a>
                                                 
@@ -221,9 +222,52 @@
         <!-- end header -->
         <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
         <!-- begin content -->
-        <div class="container">
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__body">
+                <div class="auth-form">
+                    <div class="wrapper_content">
+                        <div class="col-6">
+                            <div class="form_register">
+                                <form action="">
+                                    <h3>ĐĂNG KÝ</h3>
+                                    <label class="style_register" for="email"> Email(*) </label>
+                                    <input id="email" type="email" name="email" placeholder="nhập email"> <br>
+                             
+                                    <label class="style_register" for="pass"> Password(*) </label>
+                                    <input id="password " type="password" name="pass" placeholder="nhập mật khẩu"> <br>
+                             
+                                    <label  class="style_register" for="pass_1">  Nhập lại password(*)</label>
+                                    <input id="password_1 " type="password" name="pass_1" placeholder="nhập lại mật khẩu">  <br>
+                                    
+                                    <input type="button" style="padding: 11px 40px; color: #000000;background-color: teal;margin-top: 12px;"  value="Đăng ký"></input>
+                                    <a href="../index.html">Trở về</a>                                         
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form_login">
+                                <form action="">
+                                    <h3>ĐĂNG NHẬP</h3>
+                                    <label class="style_register" for="email"> Email(*) </label>
+                                    <input id="email" type="email" name="email" placeholder="nhập email"> <br>
+                             
+                                    <label class="style_register" for="pass"> Password(*) </label>
+                                    <input id="password " type="password" name="pass" placeholder="nhập mật khẩu"> <br>
 
+                                    <input type="checkbox" >Ghi nhớ đăng nhập<br>
+                             
+                                    <input type="button" style="padding: 11px 40px;  color: #000000;background-color: teal;margin-top: 12px"  value="Đăng nhập"></input>
+                                    <a href="">Quên mật khẩu</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
         </div>
+        
         <!-- end content -->
         <!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
         <!-- begin footer -->

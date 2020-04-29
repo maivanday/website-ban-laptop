@@ -5,6 +5,14 @@
     text-decoration: none;
     list-style-type: none;
 }
+.wrapper{
+    
+    width: 100%;
+}
+.wrapper_content{
+    width: 80%;
+    margin: 0 auto;
+}
 /* ---------chia layout 12 cot---------- */
 .col-1{
 	width: 6.333333333%;
