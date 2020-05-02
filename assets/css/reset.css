@@ -75,4 +75,36 @@
 	margin:0 1%;
 }
 /* ------------------------ */
+/* chia để lấy 5 sp */
+.col-2-4{
+	width: 18%;
+	float: left;
+	margin:1% 1%;
+}
+/* ----------------------------phân trang */
+.choose_page{
+clear: both;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.choose_page_item{
+    margin: 58px 12px;
+}
+.choose_page_item-active .choose_page_item-link{
+	background-color: #0f0d95;
+	color: #ffffff;
+
+}
+.choose_page_item-link{
+height: 30px;
+line-height: 30px;
+min-width: 40px;
+display: block;
+text-align: center;
+
+}
+.choose_page_item-link:hover{
+	background-color: #0f0d95;
+	color: #ffffff;
 }
