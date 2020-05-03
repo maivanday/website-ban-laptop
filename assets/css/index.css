@@ -9,10 +9,7 @@
  
     
 }
-.wrapper_content{
-    width: 80%;
-    margin: 0 auto;
-}
+
 .nav_menu{
   padding-top: 14px;
  
@@ -370,4 +367,47 @@ padding-bottom: 9px;
 }
 .name_made_in{
 
+}
+/* --------------------footer--------------------------------------------- */
+
+.footer{
+    padding-top: 15px;
+   
+    background-color:#000000;
+    clear: both;
+    height: 500px;
+}
+.footer_title{
+    padding-bottom: 14px;
+    font-size: 0.875rem;
+    color: #ffffff;
+
+}
+.footer-list{
+
+}
+.footer-link{
+    color: #0f0d95;
+    display: block;
+    padding: 12px 0;
+
+}
+.footer-link a{
+    color: #cac5c5;
+    font-size: 0.875rem;
+}
+.footer-link a:hover{
+    color: #5a6eff;
+}
+.footer-link a img:hover{
+    background-color: #cac5c5;
+}
+.set_width{
+    height: 39px;
+    width: 112px;
+}
+.copyright>p{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.125rem;
 }
