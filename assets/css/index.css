@@ -17,7 +17,7 @@
     
 }
 .main_menu{
-position: relative;
+    position: relative;
 
 }
 
@@ -25,17 +25,17 @@ position: relative;
     float: left;
 }
 .main_menu>ul>li>a{
-display: inline-block;
-font-size: 1.375rem;
-padding: 0px 30px;
-line-height: 72px;
-color: #ffffff
+    display: inline-block;
+    font-size: 1.375rem;
+    padding: 0px 30px;
+    line-height: 72px;
+    color: #ffffff
 
 }
 .fa-chevron-down{
-font-size: 1rem;
-margin-left: .32px;
-opacity: .6;
+    font-size: 1rem;
+    margin-left: .32px;
+    opacity: .6;
 }
 
 

@@ -39,8 +39,8 @@
     color: #ffffff;
 }
 .form_login h3 {
-margin-top: 31px;
-padding-bottom: 16px;
+    margin-top: 31px;
+    padding-bottom: 16px;
 }
 .form_login a{
     padding-left: 157px;
@@ -48,9 +48,9 @@ padding-bottom: 16px;
 }
 .form_login input {
     padding: 8px 140px;
-line-height: 30px;
-margin: 15px 0;
-color: #000000;
+    line-height: 30px;
+    margin: 15px 0;
+    color: #000000;
 
 }
 /* modal */

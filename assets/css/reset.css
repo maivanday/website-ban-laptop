@@ -83,10 +83,10 @@
 }
 /* ----------------------------phân trang */
 .choose_page{
-clear: both;
-display: flex;
-justify-content: center;
-align-items: center;
+	clear: both;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .choose_page_item{
     margin: 58px 12px;
@@ -97,11 +97,11 @@ align-items: center;
 
 }
 .choose_page_item-link{
-height: 30px;
-line-height: 30px;
-min-width: 40px;
-display: block;
-text-align: center;
+	height: 30px;
+	line-height: 30px;
+	min-width: 40px;
+	display: block;
+	text-align: center;
 
 }
 .choose_page_item-link:hover{
