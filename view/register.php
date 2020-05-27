@@ -1,28 +1,28 @@
 
 <?php
-$host ="localhost";
-$dbusername ="root";
-$dbpassword = "";
-$dbname ="form_register";
-$conn = new mysqli($host, $dbusername,$dbpassword,$dbname);
-
-
-if (isset($_POST["email"]) && isset($_POST["password"]))
-{
-    $sql="INSERT INTO info_user(email,password) values('" . $_POST["email"] . "', '" . $_POST["password"] ."')";
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+include 'connect_manage.php';
+if(isset($_POST['dangky'])){
+    $username = $_POST['email'];
+    $password = $_POST['password'];
     
-    $conn->close();
-    echo "username:"." " .$_POST['email']. "</br>";
-    echo "pass:"." " .$_POST['password']."<br>";
-    echo "đăng ký thành công";
-    
-    die();
-}
+
+    $sql="INSERT INTO register_account(username,password) values('$username', '$password')";
+    if ($conn->query($sql)) {
+            echo '<script language="javascript">alert("Đăng ký thành công !");window.location="register.php";</script>';
+          exit;
+        }
+         else {
+          
+            echo '<script language="javascript">alert("tên đăng ký đã tồn tại !");window.location="register.php";</script>';
+            
+        }
+        
+        $conn->close();
+        
+        die();
+
+ }
+
 
 ?>
 
@@ -39,6 +39,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]))
     <title>form đăng ký</title>
 </head>
 <body>
+    
     
     <div class="wrapper">
         <!-- begin header -->
@@ -258,35 +259,36 @@ if (isset($_POST["email"]) && isset($_POST["password"]))
                     <div class="wrapper_content">
                         <div class="col-6">
                             <div class="form_register">
-                                <form action="register.php" method="POST">
+                                <form  id =register action="register.php" method="POST" onsubmit='return check_register()' >
                                     <h3>ĐĂNG KÝ</h3>
                                     <label class="style_register" for="email"> Email(*) </label>
                                     <input id="email" type="email" name="email" placeholder="nhập email"> <br>
-                             
+        
                                     <label class="style_register" for="pass"> Password(*) </label>
                                     <input id="password " type="password" name="password" placeholder="nhập mật khẩu"> <br>
                              
                                     <label  class="style_register" for="pass_1">  Nhập lại password(*)</label>
                                     <input id="password_1 " type="password" name="pass_1" placeholder="nhập lại mật khẩu">  <br>
                                     
-                                    <input type="submit" style="padding: 11px 40px; color: #000000;background-color: teal;margin-top: 12px;"  value="Đăng ký"></input>
+                                    <input type="submit" style="padding: 11px 40px; color: #000000;background-color: teal;margin-top: 12px;" name="dangky" value="Đăng ký"></input>
                                     <a href="../index.html">Trở về</a>                                         
                                 </form>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form_login">
-                                <form action="" >
+                                <form  id =login action="login.php" method ="POSt" onsubmit = 'return check_login()' >
                                     <h3>ĐĂNG NHẬP</h3>
                                     <label class="style_register" for="email"> Email(*) </label>
-                                    <input id="email" type="email" name="email" placeholder="nhập email"> <br>
+                                    <input id="login_email" type="email" name="email" placeholder="nhập email"> <br>
                              
                                     <label class="style_register" for="password"> Password(*) </label>
-                                    <input id="password " type="password" name="password" placeholder="nhập mật khẩu"> <br>
+                                    <input id="login_password " type="password" name="password" placeholder="nhập mật khẩu"> <br>
 
                                     <input type="checkbox" >Ghi nhớ đăng nhập<br>
-                             
-                                    <input type="button" style="padding: 11px 40px;  color: #000000;background-color: teal;margin-top: 12px"  value="Đăng nhập"></input>
+                                    
+
+                                    <input type="submit" style="padding: 11px 40px;  color: #000000;background-color: teal;margin-top: 12px"name="dangnhap"  value = "Đăng nhập"></input>
                                     <a href="">Quên mật khẩu</a>
                                 </form>
                             </div>
@@ -305,5 +307,80 @@ if (isset($_POST["email"]) && isset($_POST["password"]))
         </div>
         <!-- end footer -->
     </div>
+    <!-- script javascript -->
+    <script>
+     
+ function check_register() {
+   var email = document.forms["register"]["email"].value;
+   var pass = document.forms["register"]["password"].value;
+   var pass_1 =document.forms["register"]["pass_1"].value;
+   var dk = false;
+
+  // check email 
+  if(email == "") {
+    alert("Email không được để trống");
+         return dk = false;
+  }
+   
+   
+   //check pass
+   if(pass == "") {
+    alert("Mật khẩu không được để trống");
+        return dk = false;
+    }       else if (pass.length <8 || pass.length >16){
+                alert("Mật khẩu phải có ít nhất 8 ký tự và nhiều nhất 16 ký tự")
+                    return dk = false;
+        
+                } else if(pass===email){
+                    alert("Mật khẩu không được chứa tên đăng nhập ")
+                        return dk = false;
+   }
+   // check password again
+   if(pass_1 == "") {
+     alert("Phải nhập lại password, không được để trống")
+        return dk = false;
+         } else if (pass_1 !=pass){
+             alert("Nhập lại mật khẩu cho chính xác")
+                return dk = false;
+   }
+
+   return dk = true;
+
+  
+    }
+
+    // check login-------------------------------------------------------------------//
+    function check_login() {
+   var email = document.forms["login"]["email"].value;
+   var pass = document.forms["login"]["password"].value;
+   
+   var dk = false;
+
+  // check email 
+  if(email == "") {
+    alert("Email không được để trống");
+         return dk = false;
+  }
+   
+   
+   //check pass
+   if(pass == "") {
+
+    alert("Mật khẩu không được để trống");
+        return dk = false;
+    }       else if (pass.length <8 || pass.length >16){
+                alert("Mật khẩu phải có ít nhất 8 ký tự và nhiều nhất 16 ký tự")
+                    return dk = false;
+        
+                } else if(pass===email){
+                    alert("Mật khẩu không được chứa tên đăng nhập")
+                        return dk = false;
+   }
+  
+   return dk = true;
+  
+    }
+
+</script>
 </body>
 </html>
